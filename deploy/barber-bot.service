@@ -1,0 +1,14 @@
+[Unit]
+Description=Barber booking Telegram bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=bot
+WorkingDirectory=/home/bot/barber_bot
+ExecStart=/home/bot/barber_bot/.venv/bin/python bot.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
